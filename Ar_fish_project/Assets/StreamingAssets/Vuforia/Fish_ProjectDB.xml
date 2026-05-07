@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig>
+  <Tracking>
+    <ImageTarget name="zargana_baligi" size="20.000000 16.969696" />
+    <ImageTarget name="kopek_baligi" size="20.000000 18.285715" />
+    <ImageTarget name="mersin_baligi" size="20.000000 17.187500" />
+    <ImageTarget name="balik2" size="10.000000 10.073126" />
+    <ImageTarget name="balik1" size="10.000000 10.259259" />
+  </Tracking>
+</QCARConfig>
