@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig>
   <Tracking>
+    <ImageTarget name="uzun_burunlu_fare_baligi" size="10.000000 8.938053" />
+    <ImageTarget name="pisi_baligi" size="10.000000 9.514564" />
+    <ImageTarget name="fener_baligi" size="10.000000 9.035088" />
+    <ImageTarget name="balon_baligi" size="10.000000 9.700000" />
+    <ImageTarget name="kahverengi_vatoz_baligi" size="10.000000 8.571428" />
+    <ImageTarget name="mavi_yengec" size="10.000000 8.389831" />
+    <ImageTarget name="benekli_dil_baligi" size="10.000000 9.369370" />
+    <ImageTarget name="kirlangic_baligi" size="10.000000 8.796296" />
+    <ImageTarget name="kalkan_baligi" size="10.000000 9.444445" />
     <ImageTarget name="zargana_baligi" size="20.000000 16.969696" />
     <ImageTarget name="kopek_baligi" size="20.000000 18.285715" />
     <ImageTarget name="mersin_baligi" size="20.000000 17.187500" />

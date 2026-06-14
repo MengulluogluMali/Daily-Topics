@@ -1,6 +1,8 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.EnhancedTouch;
 #endif
 
 namespace ARFishQuiz
@@ -63,40 +65,60 @@ namespace ARFishQuiz
 
             bool pressed = false;
             Vector2 screenPos = Vector2.zero;
+            int touchId = -1;
 
 #if ENABLE_INPUT_SYSTEM
-            // Yeni Input System
-            if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
+            // Yeni Input System (Android/iOS dokunma + PC mouse)
+            if (Touchscreen.current != null && Touchscreen.current.primaryTouch.press.wasPressedThisFrame)
+            {
+                pressed = true;
+                screenPos = Touchscreen.current.primaryTouch.position.ReadValue();
+                touchId = Touchscreen.current.primaryTouch.touchId.ReadValue();
+            }
+            else if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
             {
                 pressed = true;
                 screenPos = Mouse.current.position.ReadValue();
             }
-            else if (Touchscreen.current != null && Touchscreen.current.primaryTouch.press.wasPressedThisFrame)
-            {
-                pressed = true;
-                screenPos = Touchscreen.current.primaryTouch.position.ReadValue();
-            }
 #endif
 #if ENABLE_LEGACY_INPUT_MANAGER
-            // Eski Input Manager (destek için)
+            // Eski Input Manager (her ihtimale karşı)
             if (!pressed)
             {
-                if (Input.GetMouseButtonDown(0))
-                {
-                    pressed = true;
-                    screenPos = Input.mousePosition;
-                }
-                else if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+                if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
                 {
                     pressed = true;
                     screenPos = Input.GetTouch(0).position;
+                    touchId = Input.GetTouch(0).fingerId;
+                }
+                else if (Input.GetMouseButtonDown(0))
+                {
+                    pressed = true;
+                    screenPos = Input.mousePosition;
                 }
             }
 #endif
 
             if (!pressed) return;
 
+            // UI üstündeysek (örn. sağ üstteki Akvaryum butonu, viewer paneli) tetikleme
+            if (IsPointerOverUI(touchId, screenPos)) return;
+            // Çizim paneli açıkken hiçbir 3D buton tetiklenmesin
+            if (AquariumDrawingManager.Instance != null && AquariumDrawingManager.Instance.IsOpen) return;
+
             TryRaycast(cam, screenPos);
+        }
+
+        private static bool IsPointerOverUI(int touchId, Vector2 screenPos)
+        {
+            if (EventSystem.current == null) return false;
+
+            // Önce touchId ile dene (mobil), olmadıysa default pointer kontrolü
+            if (touchId >= 0)
+            {
+                if (EventSystem.current.IsPointerOverGameObject(touchId)) return true;
+            }
+            return EventSystem.current.IsPointerOverGameObject();
         }
 
         private void TryRaycast(Camera cam, Vector2 screenPosition)

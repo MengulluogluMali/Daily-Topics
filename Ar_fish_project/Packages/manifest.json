@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "com.coplaydev.coplay": "https://github.com/CoplayDev/coplay-unity-plugin.git#beta",
     "com.ptc.vuforia.engine": "file:com.ptc.vuforia.engine-11.4.4.tgz",
     "com.unity.ai.navigation": "2.0.11",
     "com.unity.collab-proxy": "2.11.4",

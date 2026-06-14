@@ -73,3 +73,14 @@ sysinfo.txt
 
 # Ignore Codacy instructions
 .github/instructions/codacy.instructions.md
+
+# Vuforia Engine Tarball Package
+Ar_fish_project/Packages/com.ptc.vuforia.engine-11.4.4.7gz
+/Packages/com.ptc.vuforia.engine-11.4.4.7gz
+
+# Android Build & Geçici Derleme Klasörleri
+**/[Uu]tmp/
+**/.utmp/
+**/cmakeFiles-v1/
+**/codemodel-v2/
+*.json
