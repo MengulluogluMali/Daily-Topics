@@ -1,9 +1,9 @@
 # Geliştirenler 
 
-Harun ULAŞ - 215541033
-Mehmet Ali MENGÜLLÜOĞLU - 225541053
-Yusuf MARAL - 215541005 
-Zeynep Nisanur TATAR - 225541037
+Mehmet Ali MENGÜLLÜOĞLU - 225541053 (Ekip Lideri, Proje Tasarım Organizasyon ve Ekip Yönetimi)
+Harun ULAŞ - 215541033 - (Unity Genel Sorumlusu)
+Yusuf MARAL - 215541005 - (Veritabanı Tasarım ve Gerçekleştirme Sorumlusu)
+Zeynep Nisanur TATAR - 225541037 (Görsel Tasarım ve Modelleme Sorumlusu)
 
 ---
 
