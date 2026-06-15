@@ -47,13 +47,11 @@ Mevcut sürümde aşağıdaki **12 balık türü** için AR içerikleri hazırla
 | 3 | Köpek Balığı (Mahmuzlu Camgöz) |
 | 4 | Pisi Balığı |
 | 5 | Fener Balığı |
-| 6 | Balon Balığı |
-| 7 | Vatoz |
-| 8 | Mavi Yengeç |
-| 9 | Benekli Dil Balığı |
-| 10 | Kırlangıç Balığı |
-| 11 | Kalkan Balığı |
-| 12 | Uzun Burunlu Fare Balığı |
+| 6 | Vatoz |
+| 7 | Mavi Yengeç |
+| 8 | Benekli Dil Balığı |
+| 9 | Kırlangıç Balığı |
+| 10 | Uzun Burunlu Fare Balığı |
 
 
 ---
@@ -110,7 +108,7 @@ Mevcut sürümde aşağıdaki **12 balık türü** için AR içerikleri hazırla
 
 1. Bu repo'yu klonlayın:
    ```bash
-   git clone <repo-url>
+   git clone [<repo-url>](https://github.com/MengulluogluMali/Daily-Topics/)
    ```
 
 2. Unity Hub'da `Ar_fish_project` klasörünü proje olarak açın.
@@ -128,8 +126,9 @@ Mevcut sürümde aşağıdaki **12 balık türü** için AR içerikleri hazırla
    - `achievements.json`
 
 6. **Build Settings → Android** platformunu seçin ve **Switch Platform** yapın.
+   Minimum Android Sürümü : Android 10.0 ve üstü
 
-7. `SampleScene` sahnesini açarak **Play** modunda editörde test edebilir ya da Android cihaza build alabilirsiniz.
+8. `SampleScene` sahnesini açarak **Play** modunda editörde test edebilir ya da Android cihaza build alabilirsiniz.
 
 ---
 
